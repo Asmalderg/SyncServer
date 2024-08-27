@@ -9,5 +9,13 @@ project(SyncServer
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Link Boost libraries
-target_link_libraries(${PROJECT_NAME} BoostAsio)
+# Include Boost headers
+target_include_directories(${PROJECT_NAME} PRIVATE ${Boost_SOURCE_DIR} ${BOOST_INCLUDEDIR})
+
+# Link BoostAsio to your project
+target_link_libraries(${PROJECT_NAME} BoostAsio Boost::system ws2_32)
+
+
+
+
+

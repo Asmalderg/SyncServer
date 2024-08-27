@@ -2,7 +2,7 @@
 include(FetchContent)
 
 # Set Boost options
-#set(BOOST_INCLUDE_LIBRARIES thread filesystem system program_options date_time)
+set(Boost_USE_STATIC_LIBS ON)
 set(BOOST_ENABLE_CMAKE ON)
 
 # Download Boost
@@ -12,6 +12,7 @@ FetchContent_Declare(
   GIT_PROGRESS TRUE
   GIT_TAG boost-1.86.0
 )
+
 FetchContent_MakeAvailable(Boost)
 
 # Boost root directory
@@ -34,4 +35,5 @@ target_link_libraries(BoostAsio
   Boost::system
   Boost::program_options
   Boost::date_time
+  Boost::asio
 )
