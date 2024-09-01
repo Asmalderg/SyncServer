@@ -4,5 +4,3 @@ project(SyncServer)
 
 add_subdirectory(ExternalDeps)
 add_subdirectory(src)
-
-set(BOOST_INCLUDE_DIRS ${Boost_SOURCE_DIR})

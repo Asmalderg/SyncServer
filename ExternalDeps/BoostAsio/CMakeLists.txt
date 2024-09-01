@@ -2,7 +2,7 @@
 include(FetchContent)
 
 # Set Boost options
-set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_STATIC_LIBS OFF)
 set(BOOST_ENABLE_CMAKE ON)
 
 # Download Boost
@@ -18,6 +18,8 @@ FetchContent_MakeAvailable(Boost)
 # Boost root directory
 set(BOOST_ROOT ${Boost_SOURCE_DIR})
 set(BOOST_INCLUDEDIR ${Boost_SOURCE_DIR}/boost)
+set(BOOST_LIBS ${Boost_SOURCE_DIR}/libs)
+
 
 # Print Boost directories for debugging
 message(STATUS "Boost source directory: ${Boost_SOURCE_DIR}")
